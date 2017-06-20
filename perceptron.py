@@ -22,3 +22,11 @@ for i in range(n):
 	error = expected - unit_step(result)
 	errors.append(error)
 	w += eta * error * x
+
+for x, _ in training_data:
+	result = dot(x, w)
+	print("{}: {} -> {}".format(x[:2], result, unit_step(result)))
+
+from pylab import plot, ylim
+ylim([-1,1])
+plot(errors)
